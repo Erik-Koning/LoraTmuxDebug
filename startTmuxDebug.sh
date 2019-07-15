@@ -9,7 +9,7 @@ tmux send-keys 'sudo tcpdump -AUq -i lo port 1700' Enter
 tmux split-window -h
 tmux send-keys 'journalctl -f -n 100 -u lora-gateway-bridge' Enter
 tmux select-pane -t 2
-tmux send-keys 'mosquitto_sub -v -t "gateway/#"' Enter
+tmux send-keys 'mosquitto_sub -v -t "gateway/#" -h 172.0.0.0 -p 1883' Enter
 tmux split-pane -h
 tmux select-plane -t 3
 
